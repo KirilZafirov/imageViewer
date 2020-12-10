@@ -1,34 +1,41 @@
 
 <h3>Code Selection</h3>
 <form  [formGroup]="form">
+  <div class="form-group">
+    <div class="form-label">Style</div>
     <mat-form-field>
-      <mat-label>Style</mat-label>
       <mat-select id="style" formControlName="style" required>
         <mat-option *ngFor="let option of styles"
-        [value]="option"
-        [title]="option">
-        {{option}}
+        [value]="option.value"
+        [title]="option.displayValue">
+        {{option.displayValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
+  </div>
+  <div class="form-group">
+     <div class="form-label">Complexity</div>
     <mat-form-field>
-      <mat-label>Complexity</mat-label>
       <mat-select id="complexity" formControlName="complexity" required>
         <mat-option *ngFor="let option of complexity"
-        [value]="option"
-        [title]="option">
-        {{option}}
+        [value]="option.value"
+        [title]="option.displayValue">
+        {{option.displayValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
+  </div>
+  <div class="form-group">
+    <div class="form-label">Size</div>
     <mat-form-field>
-      <mat-label>size</mat-label>
       <mat-select id="size" formControlName="size" required>
         <mat-option *ngFor="let option of size"
-        [value]="option"
-        [title]="option">
-        {{option}}
+        [value]="option.value"
+        [title]="option.displayValue">
+        {{option.displayValue}}
         </mat-option>
       </mat-select>
     </mat-form-field>
+  </div>
+
 </form>

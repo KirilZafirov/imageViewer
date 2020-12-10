@@ -14,9 +14,9 @@ export class ApiService {
 
   baseUrl;
   private _requestParams$: BehaviorSubject<RequestParams> = new BehaviorSubject<RequestParams>(({
-    style: 'style-1',
-    complexity: 'low',
-    size: 'small'
+    style: 'style-2',
+    complexity: 'high',
+    size: 'medium'
   }));
 
   constructor(protected http: HttpClient) {
@@ -35,14 +35,13 @@ export class ApiService {
         width: res.width
       })),
       map( res => {
-        const startingLength = res.colors.length / res.width;
-        let line = startingLength;
+        let line = res.width;
         let startingPosition = 0;
 
-        return res.colors.reduce( (acc , current ,index) => {
+        return res.colors.reduce( (acc , current ,index ) => {
           if(line - index === 0) {
             startingPosition++;
-            line += startingLength ;
+            line += res.width;
             acc[startingPosition] = [];
           }
           acc[startingPosition].push(current);

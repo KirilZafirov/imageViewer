@@ -1,8 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { debounce, debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operators';
 import { RequestParams } from 'src/app/models/request.model';
+import { COMPLEXITY, SIZE, STYLES } from 'src/app/models/select-option.model';
 
 @Component({
   selector: 'app-code-selection',
@@ -11,15 +12,14 @@ import { RequestParams } from 'src/app/models/request.model';
 })
 export class CodeSelectionComponent implements OnInit {
 
-
-  styles = ['style-1' , 'style-2'];
-  complexity = ['low' , 'medium' , 'high'];
-  size = ['small' , 'medium' , 'large'];
+  styles = STYLES;
+  complexity = COMPLEXITY;
+  size = SIZE;
 
   form: FormGroup = new FormGroup({
-    style: new FormControl('style-1'),
-    complexity: new FormControl('low'),
-    size: new FormControl('small'),
+    style: new FormControl('style-2'),
+    complexity: new FormControl('high'),
+    size: new FormControl('medium'),
   });
 
   destroy$ = new Subject();

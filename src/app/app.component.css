@@ -1,0 +1,39 @@
+mat-toolbar {
+  display: inline-grid;
+  text-align: center;
+  color: #8d8d8d;
+  font-weight: bold;
+  background-color: white;
+}
+mat-card {
+  margin: 5px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+mat-card:nth-child(3) {
+  height: 525px;
+}
+section {
+  height: 90%;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 20%;
+}
+
+main {
+  width: 80%;
+  height: 100%;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
