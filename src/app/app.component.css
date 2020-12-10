@@ -11,7 +11,7 @@ mat-card {
   padding-right: 15px;
 }
 mat-card:nth-child(3) {
-  height: 525px;
+  flex: 1 1 auto;
 }
 section {
   height: 90%;
@@ -21,6 +21,9 @@ section {
 nav {
   float: left;
   width: 20%;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
 }
 
 main {
