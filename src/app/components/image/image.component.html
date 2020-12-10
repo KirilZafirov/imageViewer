@@ -1,0 +1,7 @@
+<ng-container *ngFor=" let line of pixels">
+  <div class="row">
+    <ng-container *ngFor=" let pixel of line">
+        <app-pixel [color]="pixel" [pixelSize]="pixelSize"> </app-pixel>
+    </ng-container>
+  </div>
+</ng-container>

@@ -1,1 +1,26 @@
-Image Viewer App
+<mat-toolbar>
+  <span>Pixel Code Viewer</span>
+</mat-toolbar>
+
+<section>
+  <nav>
+    <mat-card>
+      <app-code-selection (requestParams)="requestParamsChange($event)">
+      </app-code-selection>
+    </mat-card>
+
+    <mat-card>
+      <app-sizing (sizeValue)="changePixelSize($event)"> </app-sizing>
+    </mat-card>
+    <mat-card>
+
+    </mat-card>
+  </nav>
+
+  <main>
+    <ng-container *ngIf="pixels$ | async as pixels">
+      <app-image [pixels]="pixels" [pixelSize]="pixelSize$ | async">
+      </app-image>
+    </ng-container>
+  </main>
+</section>
